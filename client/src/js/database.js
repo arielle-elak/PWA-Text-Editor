@@ -14,14 +14,25 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Logic for a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  console.error('putDb not implemented');
-}
+  console.log('PUT to the database');
+  // Wait for async to create the database and specity the version 1
+  const jateDb = await openDB('jate', 1);
+  // Specify readwrite permissions to the jate db (PUT)
+  const tx = jateDb.transaction('jate', 'readwrite');
+  // Open the jate objectStore as specified above
+  const store = tx.objectStore('jate');
+  // PUT method will place content at the given (which wil always be 1 since it's a text editor and is being overridden)
+  const request = store.put({ id: 1, value: content });
+  // Get confirmation of the request
+  const result = await request;
+  console.log('🚀 - data saved to the database', result.value);
+};
 
-// TODO: Add logic for a method that gets all the content from the database
+// Logic for a method that gets all the content from the database
 export const getDb = async () => {
-  console.error('getDb not implemented');
+
 }
 
 initdb();
