@@ -5,8 +5,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add CSS loaders and babel to webpack.
-
 // All static assets (HTML, CSS, JS) will have the bundle.js at the end of the file once bundled for offline
 module.exports = () => {
   return {
