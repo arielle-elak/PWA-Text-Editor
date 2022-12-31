@@ -5,7 +5,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
 
 // All static assets (HTML, CSS, JS) will have the bundle.js at the end of the file once bundled for offline
@@ -28,10 +27,31 @@ module.exports = () => {
         title: 'Text Editor',
       }),
 
-      // src-sw.js Injector
+      // src-sw.js manifest Injector
       new InjectManifest({
         swSrc: './src-sw.js',
+        // Put in dist folder
         swDest: 'src-sw.js',
+      }),
+
+      // Creates a manifest.json file with the following attributes for styling the app
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'Text Editor',
+        short_name: 'Editor',
+        description: 'Write and edit text easily.',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
       }),
     ],
 
