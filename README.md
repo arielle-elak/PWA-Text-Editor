@@ -25,8 +25,16 @@ This project is fully deployed on Heroku:
 ## Usage
 
 Start by typing anything you would like. If you refresh the browser, your work will disappear.
+![Screenshot 2022-12-31 172407](https://user-images.githubusercontent.com/73449635/210158155-61380e5e-f51a-4c48-bdb9-27bcd5569298.png)
 
-If you press the Install button, and accept the install dialogue, you will be able to start typing away on the local application.
+
+![Screenshot 2022-12-31 172645](https://user-images.githubusercontent.com/73449635/210158165-b5158d4d-3a92-442d-8a56-989475521715.png)
+If you press the Install button, and accept the install dialogue, a local version of the app will be installed to your PC. A convenient icon will also be added to your desktop for easy access.
+
+
+Then the PWA version will appear on your desktop. No need to be connected to the internet to use it.
+![Screenshot 2022-12-31 172728](https://user-images.githubusercontent.com/73449635/210158176-f5789e1c-23ed-4bc7-b613-37fdabbe60f9.png)
+
 
 ## Tests
 
